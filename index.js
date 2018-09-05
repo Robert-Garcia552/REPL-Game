@@ -24,13 +24,15 @@ switch(answer) {
         if (dhLowerCase==='left') {
           console.log('You have entered the Observatory.')
           let obdchoice = readlineSync.question('Looking around you notice that a bookshelf and a candle sconce in a room with a bright lamp, what do you inspect bookshelf or candle?')
-          if (obdchoice==='bookshelf') {
+          let obdLowerCase = obdchoice.toLowerCase();
+          if (obdLowerCase==='bookshelf') {
             console.log('As you inspect the bookshelf you notice that it does not move, and move on to the candle. You are able to move the candle and rotate it half way clockwise. SUCCESSFULLY ESCAPED!');
-          } else if (obdchoice==='candle') {
+          } else if (obdLowerCase==='candle') {
             console.log('You are able to move the candle and rotate it half way clockwise. SUCCESSFULLY ESCAPED!');
           } else {
             let typo1 = readlineSync.question('Please enter a valid response bookshelf or candle?')
-            if (typo1==='bookshelf') {
+            let typoLower = typo1.toLowerCase();
+            if (typoLower==='bookshelf') {
               console.log('As you inspect the bookshelf you notice that it does not move, and move on to the candle. You are able to move the candle and rotate it half way clockwise. SUCCESSFULLY ESCAPED!');
             } else {
                 console.log('You are able to move the candle and rotate it half way clockwise. SUCCESSFULLY ESCAPED!');
@@ -38,9 +40,9 @@ switch(answer) {
           }
         } else if (dhLowerCase==='right') {
           console.log('You are in the Billiard Room.')
-          let brdchoice = readlineSync.question('There is nothing in this room but a broken pool stick and dusty lamps door you came in from has dissapeared...GAME OVER.')
+          console.log('There is nothing in this room but a broken pool stick and dusty lamps door you came in from has dissapeared...GAME OVER.')
         } else {
-          console.log('Your lack of attention to detail has caused you to become one with the Manor, GAME OVER.');
+          console.log('Your lack of attention to detail has caused you to become one with the Manor...GAME OVER.');
         }
         break;
 
@@ -58,7 +60,7 @@ case "billiard room":
 
 case "observatory":
 
-        console.log('You have entered the observatory.');
+        console.log('You have entered the Observatory.');
         let obdchoice = readlineSync.question('Looking around you notice that a bookshelf and a candle sconce in a room with a bright lamp, what do you inspect bookshelf or candle?')
         let obdLowerCase = obdchoice.toLowerCase();
         if (obdLowerCase==='bookshelf') {
@@ -67,7 +69,8 @@ case "observatory":
           console.log('You are able to move the candle and rotate it half way clockwise. SUCCESSFULLY ESCAPED!');
         } else {
           let typo1 = readlineSync.question('Please enter a valid response bookshelf or candle?')
-          if (typo1==='bookshelf') {
+          let typoLower = typo1.toLowerCase();
+          if (typoLower==='bookshelf') {
             console.log('As you inspect the bookshelf you notice that it does not move, and move on to the candle. You are able to move the candle and rotate it half way clockwise. SUCCESSFULLY ESCAPED!');
           } else {
               console.log('You are able to move the candle and rotate it half way clockwise. SUCCESSFULLY ESCAPED!');
@@ -84,12 +87,4 @@ default:
 var retry = readlineSync.question('Do you want to retry yes / no ?')
 var retryLowerCase = retry.toLowerCase();
 
-if (retryLowerCase==='yes')  {
-
-} else if (retryLowerCase==='no'){
-
-} else {
-  console.log('Invalid.')
-}
-
-} while (retry==='yes');
+} while (retryLowerCase==='yes');
