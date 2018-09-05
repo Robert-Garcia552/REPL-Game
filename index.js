@@ -1,7 +1,7 @@
 let readlineSync = require(`readline-sync`);
 
 let userName = readlineSync.question('May I have your name? ');
-let name = userName.charAt(0).toUpperCase() + userName.slice(1);
+let name = userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase();
 //Intro
 
 do {
@@ -87,4 +87,23 @@ default:
 var retry = readlineSync.question('Do you want to retry yes / no ?')
 var retryLowerCase = retry.toLowerCase();
 
-} while (retryLowerCase==='yes');
+if (retryLowerCase === 'yes')  {
+  var effort = 'yes';
+  } else if (retryLowerCase === 'no') {
+  var effort = 'no';
+  } else {
+      let retry = readlineSync.question('I don\'t understand, do you wish to continue?');
+      let retryLowerCase = retry.toLowerCase();
+        if(retryLowerCase==='yes') {
+          var effort = 'yes';
+        } else if (retryLowerCase==='no') {
+          var effort = 'no'
+        } else {
+          console.log('It seems that the manor has already numbed your mind. Good day!');
+          var effort = 'no';
+        }
+}
+
+var effort;
+
+} while (effort==='yes');
