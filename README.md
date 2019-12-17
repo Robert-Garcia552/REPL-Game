@@ -9,8 +9,8 @@ Robert Garcia
 
 ### Dev Dependencies
 
-* readline-sync ^1.4.9
-* node ^12.9.1
+* readline-sync 1.4.9
+* node 12.9.1
 
 ### Start Playing
 
